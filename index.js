@@ -1,4 +1,5 @@
 const express = require("express");
+const mongo_url = "mongodb+srv://shalmashal:SjAnQZHyAJBUdTGu@cluster0.mhttan5.mongodb.net/chat-app";
 const cors = require("cors");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
@@ -11,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect(mongo_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
