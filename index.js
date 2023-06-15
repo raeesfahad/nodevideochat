@@ -11,6 +11,10 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('video call backend');
+})
+
 mongoose
   .connect(mongo_url, {
     useNewUrlParser: true,
